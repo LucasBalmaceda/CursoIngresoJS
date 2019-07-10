@@ -2,10 +2,14 @@
 y luego mostrarlo por 'alert' al presionar el botón  'mostrar'*/
 function mostrar()
 {
-	var dato;
-
+    var dato;
+    
     dato = prompt("Escriba su mensaje: ");
+    
+    alert(dato); //utilizamos el alert como representacion de lo que escribiremos dentro del prompt
 
-    alert(dato);
 }
 
+
+ 
+ 
