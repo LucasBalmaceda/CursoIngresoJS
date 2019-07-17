@@ -6,13 +6,11 @@ var edad;
 
 edad = document.getElementById("edad").value;
 
-if(edad>18){
+if(edad>=18){
 
     alert("Es mayor");
 }
-if(edad<17){
-
-alert("Es menor");
-}}
-
+else{
+alert("Es menor")} 
+}
 //FIN DE LA FUNCIÓN
