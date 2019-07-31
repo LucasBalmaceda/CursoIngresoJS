@@ -1,16 +1,13 @@
 function mostrar()
 {
 
-	var contador=0;
-	// declarar variables
-	
-	var respuesta='si';
+var maximo = 0;
+var minimo = 0;
 
-	while(respuesta!='no')
-	{
-		
-	
-	}
+
+
+
+
 
 
 
