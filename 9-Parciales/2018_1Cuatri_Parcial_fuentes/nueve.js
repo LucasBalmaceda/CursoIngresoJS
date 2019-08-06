@@ -64,7 +64,7 @@ else{
     }
 }
 
-if(flag0 == 0){
+if(productoP < peso || flag0 == 0){
  
     productoP = peso;
 
@@ -72,13 +72,6 @@ if(flag0 == 0){
     
     flag0 = 1;
 }  
-
-else if(productoP < peso){
-
-    productoP = peso;
-
-    marcaP = marca;
-}
 
 if(temperatura <= 0){
 
@@ -99,7 +92,7 @@ respuesta = prompt("¿Quiere ingresar otro producto?");
 
 
 document.write("La cantidad de temperaturas pares son: " + temperaturasP + '.' + "<br>");
-document.write("La marca del producto mas pesado es : " + marcaP + '.' + "<br>" );
+document.write("La marca del producto mas pesado es : " + marcaP + ', su peso es '+ productoP + "<br>" );
 document.write("La cantidad de productos con grados bajo 0 son: " + cantidad0 + '.' + "<br>");
 document.write("El peso total es " + sumaProductos + " y el promedio es: " + promedioP + '.' + "<br>");
 document.write("El peso maximo es " + max + " y el peso minimo es " + min + '.' + "<br>");
