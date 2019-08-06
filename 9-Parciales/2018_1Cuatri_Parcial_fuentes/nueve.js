@@ -18,6 +18,7 @@ var flag = 0;
 var flag0 = 0;
 var contador = 0;
 var sumaProductos = 0;
+var marcaP;
 
 do{
 marca = prompt("Ingrese marca: ");
@@ -67,6 +68,8 @@ if(flag0 == 0){
  
     productoP = peso;
 
+    marcaP = marca;
+    
     flag0 = 1;
 }  
 
@@ -93,11 +96,13 @@ respuesta = prompt("¿Quiere ingresar otro producto?");
 
 }while(respuesta == "si");
 
+
+
 document.write("La cantidad de temperaturas pares son: " + temperaturasP + '.' + "<br>");
 document.write("La marca del producto mas pesado es : " + marcaP + '.' + "<br>" );
 document.write("La cantidad de productos con grados bajo 0 son: " + cantidad0 + '.' + "<br>");
 document.write("El peso total es " + sumaProductos + " y el promedio es: " + promedioP + '.' + "<br>");
-document.write("El peso maximo es " + max + " y el peso minimo es "+ min + '.' + "<br>");
+document.write("El peso maximo es " + max + " y el peso minimo es " + min + '.' + "<br>");
 
 
 
