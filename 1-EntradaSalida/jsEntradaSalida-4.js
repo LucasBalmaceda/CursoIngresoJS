@@ -4,11 +4,9 @@
 */
 function mostrar()
 {
-var mensaje
+var mensaje = prompt("Ingrese su mensaje: ");
 
-mensaje = prompt("Ingrese su nombre: ");
-   
-document.getElementById("elNombre").value = mensaje; 
+document.getElementById("elNombre").value = mensaje;
 
 /* creamos una variable para citar el prompt, el cual va a ser igual a la barra para que el mensaje que 
 escribamos en el prompt, salga en la barra. */

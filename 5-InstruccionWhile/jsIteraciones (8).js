@@ -1,52 +1,41 @@
 function mostrar() {//Al presionar el botón pedir números hasta que el usuario quiera, sumar los que son positivos y multiplicar los negativos.
 
-var numero = 0;
+var num;
 var suma = 0;
 var multiplicacion = 1;
-var contador = 0;
 var respuesta;
+var flag = 0;
 
 do{
-    numero = parseInt(prompt("Ingrese un numero"));
-	     
-		if(numero >= 0){
 
-			suma = suma + numero;
-		}
+	num = parseInt(prompt("Ingrese un numero: "));
 
-		else{
+	while(isNaN(num)){
 
-			multiplicacion = multiplicacion * numero;
-        contador ++;
- 		}
+		num = parseInt(prompt("Ese no es un numero valido, ingrese otro numero: "));
+	}
 
-respuesta = prompt("¿Quiere ingresar otro numero?");   
+	if(num >= 0){
 
-}while(respuesta == "si");
+		suma = suma + num;
+	}
+	else{
+
+		multiplicacion = multiplicacion * num;
+
+		flag ++;
+	}
+
+	respuesta = prompt("¿Quiere ingresar otro numero?");
+
+}while(respuesta == 's');
 
 document.getElementById("suma").value = suma;
 
-if(contador == 0){
+if(flag == 0){
 
-     multiplicacion = 0
+	multiplicacion = 0;
 }
-
 document.getElementById("producto").value = multiplicacion;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }//FIN DE LA FUNCIÓN

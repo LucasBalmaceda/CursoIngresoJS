@@ -7,13 +7,10 @@ var num1;
 var num2;
 var suma;
 
-    num1 = document.getElementById("numeroUno").value;
+    num1 = parseInt(document.getElementById("numeroUno").value);
+//nos sirve para convertir los string en numbers
 
-    num1 = parseInt(num1); //nos sirve para convertir los string en numbers
-
-    num2 = document.getElementById("numeroDos").value;
-
-    num2 = parseInt(num2);
+    num2 = parseInt(document.getElementById("numeroDos").value);
 
     suma = num1 + num2 
     

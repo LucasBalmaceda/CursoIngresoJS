@@ -2,8 +2,7 @@
 function mostrar()
 {
 
-
-	alert("Esto funciona de maravilla"); //este alert funciona para mostrar mensajes en forma de alerta
+alert("Esto funciona de maravilla. ");
 
 
 }
