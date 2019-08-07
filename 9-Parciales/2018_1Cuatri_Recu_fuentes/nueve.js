@@ -32,7 +32,7 @@ do{
 
     temperatura = parseInt(prompt("Ingrese la temperatura del habitat"));
 
-        while(!(temperatura >= -30 && temperatura <= 30) || isNaN(temperaturas)){
+        while(!(temperatura >= -30 && temperatura <= 30) || isNaN(temperatura)){
 
             temperatura = parseInt(prompt("Ingrese una temperatura que este en el rango de -30ºC y 30ºC "));
         }
@@ -57,7 +57,11 @@ do{
 
         if(temperatura < min || temperatura > max || flag1 == 0){
 
-            if(flag == 0)
+            if(flag == 0){
+
+                min = temperatura;
+                max = temperatura;
+            }
             
             if(temperatura < min){
 
@@ -84,3 +88,9 @@ do{
     respuesta = prompt("¿Quiere ingresar otro numero?");
 }while(respuesta == 's');
 }
+
+document.write("La cantidad de temperaturas pares es: " + temperaturasPares);
+document.write("El nombre del animal mas pesado es " + nombrePesado + " y la temperatura del animal más pesado es " + temperaturaPesado);
+document.write("La cantidad de animales que viven a menos de 0 grados es " + animalesACero);
+document.write("El promedio del peso de todos los animales es: " + promedio);
+document.write("El peso máximo de los animales cuyas temperaturas sean menor a cero son "+ max +" y el mínimo de todos los animales cuyas temperaturas sean bajo cero son " + min);
