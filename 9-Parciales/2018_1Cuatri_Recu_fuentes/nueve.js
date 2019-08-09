@@ -1,96 +1,116 @@
 function mostrar()
 {
+var respuesta;
 var nombre;
 var peso;
-var temperatura;
-var respuesta;
-var temperaturasPares = 0;
+var temperaturaH;
+var cantTempPar = 0;
 var nombrePesado;
-var pesoPesado;
 var temperaturaPesado;
-//El nombre y temperatura del animal más pesado 
-var flag = 0;
-var flag1 = 0;
+var pesoMaximo;
+var pesoMinimo;
 var animalesACero = 0;
 var promedio;
-var pesoTotal;
+var pesoTotal = 0;
 var contador = 0;
-var max;
-var min;
+var flag0 = 0;
+var flag = 0;
+var pesoMaximo0;
+var pesoMinimo0;
 
 
 do{
 
-    nombre = prompt("Ingrese el nombre del animal");
+    nombre = prompt("Ingrese el nombre de su animal: ");
+    
+    peso = parseInt(prompt("Ingrese el peso de su animal que sea menor a 1000KG y mayor a 1KG: "));
 
-    peso = parseInt(prompt("Ingrese el peso del animal que esté entre 1KG y 1000KG"));
+    while(peso < 1 || peso > 1000 || isNaN(peso)){
 
-        while(peso < 1 || peso > 1000 || isNaN(peso)){
-
-            peso = parseInt(prompt("ERROR, Ingrese un peso valido entre 1KG y 1000KG"));
-        }
-
-    temperatura = parseInt(prompt("Ingrese la temperatura del habitat"));
-
-        while(!(temperatura >= -30 && temperatura <= 30) || isNaN(temperatura)){
-
-            temperatura = parseInt(prompt("Ingrese una temperatura que este en el rango de -30ºC y 30ºC "));
-        }
-
-    if(temperatura %2 == 0){
-
-        temperaturasPares ++;
+        peso = parseInt(prompt("Error, Ingrese un peso valido: "));
     }
 
-    if(peso > pesoPesado || flag == 0){
+    temperaturaH = parseInt(prompt("Ingrese la temperatura del habitat que sea menor a 30ºC y mayor a -30ºC: "))
+    
+    while(temperaturaH < -30 || temperaturaH > 30 || isNaN(temperaturaH)){
 
-        pesoPesado = peso;
-
-        nombrePesado = nombre;
-
-        temperaturaPesado = temperatura;
-
-        flag = 1;
+        temperaturaH = parseInt(prompt("Error, ingrese una temperatura valida: "));
     }
 
-    if(temperatura < 0){
+    if(temperaturaH % 2 == 0){
 
-        if(temperatura < min || temperatura > max || flag1 == 0){
+        cantTempPar ++;
+    }
 
-            if(flag == 0){
+    if(peso < pesoMinimo || peso > pesoMaximo || flag == 0){
+ 
+        if(flag == 0){
 
-                min = temperatura;
-                max = temperatura;
+            pesoMaximo = peso;
+            pesoMinimo = peso;
+            flag = 1;
+            pesoMaximo = peso;
+            nombrePesado = nombre;
+            temperaturaPesado = temperaturaH;
+        }
+
+        else if(peso <= pesoMinimo){
+
+            pesoMinimo = peso;
+        }
+
+        else{
+
+            pesoMaximo = peso;
+            nombrePesado = nombre;
+            temperaturaPesado = temperaturaH;
+        }
+
+    if(temperaturaH < 0){
+        
+        animalesACero ++;
+
+        if(peso < pesoMinimo0 || peso > pesoMaximo0 || flag0 == 0){
+
+            if(flag0 == 0){
+
+                pesoMaximo0 = peso;
+
+                pesoMinimo0 = peso;
+
+                flag0 = 1;
             }
-            
-            if(temperatura < min){
 
-                min = temperatura;
+            else if(peso <= pesoMinimo0){
+
+                pesoMinimo0 = peso;
             }
 
             else{
 
-                max = temperatura;
+                pesoMaximo0 = peso;
             }
-
-            flag1 = 1;
         }
-
-        animalesACero ++;
     }
-
+    
     pesoTotal = pesoTotal + peso;
 
     contador ++;
 
     promedio = pesoTotal / contador;
 
-    respuesta = prompt("¿Quiere ingresar otro numero?");
-}while(respuesta == 's');
-}
 
-document.write("La cantidad de temperaturas pares es: " + temperaturasPares);
-document.write("El nombre del animal mas pesado es " + nombrePesado + " y la temperatura del animal más pesado es " + temperaturaPesado);
-document.write("La cantidad de animales que viven a menos de 0 grados es " + animalesACero);
-document.write("El promedio del peso de todos los animales es: " + promedio);
-document.write("El peso máximo de los animales cuyas temperaturas sean menor a cero son "+ max +" y el mínimo de todos los animales cuyas temperaturas sean bajo cero son " + min);
+    }
+
+
+    respuesta = prompt("¿Quiere igresar los datos de otro animal?");
+    
+}while(respuesta == "s");
+
+
+document.write("A) La cantidad de temperaturas pares son: " + cantTempPar + '.' + "<br>");
+document.write("B) El nombre del animal mas pesado es " + nombrePesado + " y su temperatura es " + temperaturaPesado + '.' + "<br>");
+document.write("C) La cantidad de animales que viven a menos de 0 grados son " + animalesACero + '.' + "<br>");
+document.write("D) El peso total de los animales es " + pesoTotal + " y su promedio da " + promedio + '.' + "<br>");
+document.write("F) El peso maximo de los animales que estan bajo 0ºC es " + pesoMaximo0 + " y el peso minimo es " + pesoMinimo0 + '.' + "<br>");
+}
